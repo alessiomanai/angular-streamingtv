@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WatchComponent } from './view/watch/watch.component';
 import { ChannelsComponent } from './channels/channels.component';
-import { ChannelBottonComponent } from './channel-botton/channel-botton.component';
+import { ChannelBottonComponent } from './view/channel-botton/channel-botton.component';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import * as Hls from 'hls.js';
+import Hls from 'hls.js';
 
 
 @Component({

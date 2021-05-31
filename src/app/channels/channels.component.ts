@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActualChannelService } from '../services/actual-channel.service';
 
 @Component({
   selector: 'channels',
@@ -25,7 +26,7 @@ export class ChannelsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private actualChannel: ActualChannelService) { }
 
   ngOnInit(): void {
 
@@ -36,6 +37,9 @@ export class ChannelsComponent implements OnInit {
   selectChannel($event){
 
     console.log($event);
+
+    this.actualChannel.channel = $event;
+
   }
 
 }

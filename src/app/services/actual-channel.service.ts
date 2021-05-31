@@ -5,18 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class ActualChannelService {
 
-  actualChannel : Channel;
+  actualChannel : any;
 
   constructor() {
     
   }
 
-   getChannel(){
-
+   get channel(){
     return this.actualChannel;
    }
 
-   setChannel(channel: Channel){
+   set channel(channel: any){
      this.actualChannel;
    }
 }

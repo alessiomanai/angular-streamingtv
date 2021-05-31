@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import Hls from 'hls.js';
+import { ActualChannelService } from 'src/app/services/actual-channel.service';
 
 
 @Component({
@@ -11,7 +12,9 @@ export class WatchComponent implements OnInit {
 
   @Input() videoSrc : string = 'http://livestreaming.videolina.it/live/Videolina/chunklist_w1548194757.m3u8';
 
-  constructor() { }
+  constructor(private actualChannel: ActualChannelService) { 
+    this.videoSrc = this.actualChannel.channel; 
+  }
 
   ngOnInit(): void {
 

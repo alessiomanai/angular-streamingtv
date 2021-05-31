@@ -9,7 +9,7 @@ export class ActualChannelService {
 
   constructor() {
     
-   }
+  }
 
    getChannel(){
 

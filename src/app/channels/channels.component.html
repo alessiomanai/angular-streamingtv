@@ -1,1 +1,3 @@
-asd
+<div class="row">
+<channel-botton *ngFor = "let channel of this.channels" [channel]="channel" (click)="selectChannel(channel.name)"></channel-botton>
+</div>

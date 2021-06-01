@@ -18,6 +18,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ###Docker
 
+Run this command to build a Docker image
+
+`docker build -t streamingtv:1.0 .`
+
+Then to run in a container
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

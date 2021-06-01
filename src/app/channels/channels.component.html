@@ -1,3 +1,4 @@
 <div class="row">
-<channel-botton *ngFor = "let channel of this.channels" [channel]="channel" (click)="selectChannel(channel.url)"></channel-botton>
+<channel-botton *ngFor = "let channel of this.channels; let i = index" 
+[channel]="channel" (click)="selectChannel()"></channel-botton>
 </div>

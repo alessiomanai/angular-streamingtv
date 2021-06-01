@@ -6,19 +6,20 @@ import { ActualChannelService } from 'src/app/services/actual-channel.service';
 @Component({
   selector: 'watch',
   templateUrl: './watch.component.html',
-  styleUrls: ['./watch.component.css']
+  styleUrls: ['./watch.component.css'],
+  providers: [ActualChannelService]
 })
 export class WatchComponent implements OnInit {
 
-  @Input() videoSrc : string = 'http://livestreaming.videolina.it/live/Videolina/chunklist_w1548194757.m3u8';
+  videoSrc : string;
 
-  constructor(private actualChannel: ActualChannelService) { 
-    this.videoSrc = this.actualChannel.channel; 
-  }
+  constructor(private actualChannel: ActualChannelService) { }
 
   ngOnInit(): void {
 
-    let video : any = document.getElementById("video");
+    this.getActualChannel();
+
+    let video : any = document.getElementById("video"); //makes more sense with "ViewChild" but I'm lazy
 
     if (Hls.isSupported()) {
       var hls = new Hls();
@@ -26,6 +27,11 @@ export class WatchComponent implements OnInit {
       hls.attachMedia(video);
     }
     
+  }
+
+  getActualChannel() : void {
+    
+    this.videoSrc = this.actualChannel.getChannel();
   }
 
 }

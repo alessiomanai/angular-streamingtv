@@ -17,9 +17,9 @@ export class ChannelsComponent implements OnInit {
     this.channels = this.actualChannel.getChannelsList();
   }
 
-  selectChannel(){
+  selectChannel(i: number){
 
-    this.actualChannel.selectChannel(1);
+    this.actualChannel.selectChannel(i);
 
   }
 

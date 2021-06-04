@@ -1,7 +1,7 @@
-FROM node:latest
-WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+FROM node:16.2.0-alpine
+WORKDIR '/app'
+COPY package.json .
 RUN npm install
 COPY . .
 EXPOSE 4200
-RUN npm run build 
+CMD ["npm", "start"]

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -6,10 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ActualChannelService {
 
-  actualChannel : any;
-  selected : number = 0;
-
-  channels : Array<any> = [
+  private channels : Array<any> = [
     {
       name: "Canale 5",
       url: "https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(c5)/index.m3u8",
@@ -27,16 +25,17 @@ export class ActualChannelService {
     }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     
   }
 
   selectChannel(index : number){
-    this.selected = index;
+    this.router.navigate(['/watch', index]);
+    
   }
 
-  getChannel(){
-    return this.channels[this.selected].url;
+  getChannel(i: number){
+    return this.channels[i].url;
   }
 
   getChannelsList() {

@@ -22,7 +22,9 @@ Run this command to build a Docker image
 
 `docker build -t streamingtv:1.0 .`
 
-Then to run in a container
+Then to run in a container (for dev)
+
+`docker run -d --name streamingtv -p 4200:4200 streamingtv:1.0 `
 
 ## Running unit tests
 

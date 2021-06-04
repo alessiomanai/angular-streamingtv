@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import Hls from 'hls.js';
 import { ActualChannelService } from 'src/app/services/actual-channel.service';
 
@@ -11,12 +12,17 @@ import { ActualChannelService } from 'src/app/services/actual-channel.service';
 })
 export class WatchComponent implements OnInit {
 
-  videoSrc : string;
+  private videoSrc : string;
+  private id : number;
 
-  constructor(private actualChannel: ActualChannelService) { }
+  constructor(private actualChannel: ActualChannelService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
+    this.route.params.subscribe(data => {
+      this.id = data['ch'];
+    });
+    
     this.getActualChannel();
 
     let video : any = document.getElementById("video"); //makes more sense with "ViewChild" but I'm lazy
@@ -31,7 +37,7 @@ export class WatchComponent implements OnInit {
 
   getActualChannel() : void {
     
-    this.videoSrc = this.actualChannel.getChannel();
+    this.videoSrc = this.actualChannel.getChannel(this.id);
   }
 
 }

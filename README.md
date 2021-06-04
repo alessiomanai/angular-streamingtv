@@ -1,6 +1,6 @@
 # AngularStreamingtv
 
-A Tv streaming web application in Angular, written in Typescript.
+A Tv streaming web application in Angular, written in Typescript. Android version [here](https://github.com/alessiomanai/StreamingTV).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
@@ -22,9 +22,9 @@ Run this command to build a Docker image
 
 `docker build -t streamingtv:1.0 .`
 
-Then to run in a container (for dev)
+Then run in a container 
 
-`docker run -d --name streamingtv -p 4200:4200 streamingtv:1.0 `
+`docker run -d --name streamingtv -p 4200:80 streamingtv:1.0 `
 
 ## Running unit tests
 

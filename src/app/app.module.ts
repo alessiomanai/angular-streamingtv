@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { WatchComponent } from './view/watch/watch.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { ChannelBottonComponent } from './view/channel-botton/channel-botton.component';
-import { ActualChannelService } from './services/actual-channel.service';
+import { ChannelService } from './services/channel.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { ActualChannelService } from './services/actual-channel.service';
     AppRoutingModule
   ],
   providers: [
-    ActualChannelService
+    ChannelService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,21 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Hls from 'hls.js';
-import { ActualChannelService } from 'src/app/services/actual-channel.service';
+import { ChannelService } from 'src/app/services/channel.service';
 
 
 @Component({
   selector: 'watch',
   templateUrl: './watch.component.html',
   styleUrls: ['./watch.component.css'],
-  providers: [ActualChannelService]
+  providers: [ChannelService]
 })
 export class WatchComponent implements OnInit {
 
   private videoSrc : string;
   private id : number;
 
-  constructor(private actualChannel: ActualChannelService, private route: ActivatedRoute) { }
+  constructor(private channelService: ChannelService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -37,7 +37,7 @@ export class WatchComponent implements OnInit {
 
   getActualChannel() : void {
     
-    this.videoSrc = this.actualChannel.getChannel(this.id);
+    this.videoSrc = this.channelService.getChannel(this.id);
   }
 
 }

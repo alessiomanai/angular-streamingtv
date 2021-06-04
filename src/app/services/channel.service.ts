@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ActualChannelService {
+export class ChannelService {
 
   private channels : Array<any> = [
     {
@@ -21,6 +20,21 @@ export class ActualChannelService {
     {
       name: "Rete 4",
       url: "https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(r4)/index.m3u8",
+      photo: null
+    },
+    {
+      name: "Mediaset Extra",
+      url: "https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(kq)/index.m3u8",
+      photo: null
+    },
+    {
+      name: "20",
+      url: "https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(lb)/index.m3u8",
+      photo: null
+    },
+    {
+      name: "Italia 2",
+      url: "https://live3-mediaset-it.akamaized.net/Content/hls_h0_clr_vos/live/channel(I2)/index.m3u8",
       photo: null
     }
   ];

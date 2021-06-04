@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActualChannelService } from '../services/actual-channel.service';
+import { ChannelService } from '../services/channel.service';
 
 @Component({
   selector: 'channels',
   templateUrl: './channels.component.html',
   styleUrls: ['./channels.component.css'],
-  providers: [ActualChannelService]
+  providers: [ChannelService]
 })
 export class ChannelsComponent implements OnInit {
 
   channels : Array<any> ;
 
-  constructor(private actualChannel: ActualChannelService) { }
+  constructor(private actualChannel: ChannelService) { }
 
   ngOnInit(): void {
     this.channels = this.actualChannel.getChannelsList();

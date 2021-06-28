@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Channel } from '../model/channel.interface';
 import * as data from './../../channels.json';
 
 
@@ -8,14 +9,14 @@ import * as data from './../../channels.json';
 })
 export class ChannelService {
 
-  private channels : any = (data as any).default;
+  private channels : Array<Channel> = (data as any).default;
 
   constructor(private router: Router) {
     
   }
 
-  selectChannel(index : number){
-    this.router.navigate(['/watch', index]);
+  selectChannel(url : string){
+    this.router.navigate(['/watch', url]);
     
   }
 
@@ -23,7 +24,8 @@ export class ChannelService {
     return this.channels[i].url;
   }
 
-  getChannelsList() {
+  getChannelsList(): Array<Channel> {
     return this.channels;
   }
+
 }

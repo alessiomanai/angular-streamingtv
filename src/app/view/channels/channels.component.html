@@ -1,4 +1,9 @@
+<nav class="navbar navbar-expand-md fixed-top bg-dark">
+    <search class="container" (onSearch)="getFilteredList($event)"></search>
+</nav>
+
 <div class="row">
-<channel-botton *ngFor = "let channel of this.channels; let i = index" 
-[channel]="channel" (click)="selectChannel(i)"></channel-botton>
+    <channel-botton *ngFor="let channel of this.channels; let i = index" [channel]="channel"
+        (click)="selectChannel(channel.url)">
+    </channel-botton>
 </div>

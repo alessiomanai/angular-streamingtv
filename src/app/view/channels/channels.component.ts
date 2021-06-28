@@ -9,7 +9,7 @@ import { ChannelService } from '../../services/channel.service';
 })
 export class ChannelsComponent implements OnInit {
 
-  channels : Array<any> ;
+  channels: Array<any>;
 
   constructor(private actualChannel: ChannelService) { }
 
@@ -17,10 +17,14 @@ export class ChannelsComponent implements OnInit {
     this.channels = this.actualChannel.getChannelsList();
   }
 
-  selectChannel(i: number){
+  selectChannel(url: string) {
 
-    this.actualChannel.selectChannel(i);
+    this.actualChannel.selectChannel(url);
 
+  }
+
+  public getFilteredList(list: any) {
+    this.channels = list;
   }
 
 }

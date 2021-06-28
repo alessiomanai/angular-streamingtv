@@ -7,13 +7,15 @@ import { WatchComponent } from './view/watch/watch.component';
 import { ChannelsComponent } from './view/channels/channels.component';
 import { ChannelBottonComponent } from './view/channel-botton/channel-botton.component';
 import { ChannelService } from './services/channel.service';
+import { SearchComponent } from './view/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WatchComponent,
     ChannelsComponent,
-    ChannelBottonComponent
+    ChannelBottonComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

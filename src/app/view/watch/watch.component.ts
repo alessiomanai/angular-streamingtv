@@ -13,7 +13,7 @@ import { ChannelService } from 'src/app/services/channel.service';
 export class WatchComponent implements OnInit {
 
   private videoSrc : string;
-  private id : number;
+  private id : string;
 
   constructor(private channelService: ChannelService, private route: ActivatedRoute) { }
 
@@ -23,7 +23,7 @@ export class WatchComponent implements OnInit {
       this.id = data['ch'];
     });
     
-    this.getActualChannel();
+    this.videoSrc = this.id;
 
     let video : any = document.getElementById("video"); //makes more sense with "ViewChild" but I'm lazy
 
@@ -33,11 +33,6 @@ export class WatchComponent implements OnInit {
       hls.attachMedia(video);
     }
     
-  }
-
-  getActualChannel() : void {
-    
-    this.videoSrc = this.channelService.getChannel(this.id);
   }
 
 }

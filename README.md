@@ -20,11 +20,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run this command to build a Docker image
 
-`docker build -t streamingtv:1.0 .`
+`docker build -t streamingtv:1.1 .`
 
 Then run in a container 
 
-`docker run -d --name streamingtv -p 4200:80 streamingtv:1.0 `
+`docker run -d --name streamingtv -p 4200:80 streamingtv:1.1 `
 
 ## Running unit tests
 

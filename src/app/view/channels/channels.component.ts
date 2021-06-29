@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Channel } from 'src/app/model/channel.interface';
 import { ChannelService } from '../../services/channel.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class ChannelsComponent implements OnInit {
 
   }
 
-  public getFilteredList(list: any) {
+  public getFilteredList(list: Array<Channel>) {
     this.channels = list;
   }
 

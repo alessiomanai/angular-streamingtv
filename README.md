@@ -40,7 +40,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Licence
 
-	Copyright (C) 2021  Alessio Manai
+	Copyright (C) 2021-2022  Alessio Manai
 
  	This program is free software: you can redistribute it and/or modify
  	it under the terms of the GNU General Public License as published by

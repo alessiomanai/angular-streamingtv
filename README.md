@@ -20,11 +20,13 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run this command to build a Docker image
 
-`docker build -t streamingtv:1.2 .`
+`docker build -t streamingtv:1.2.1 .`
 
 Then run in a container 
 
-`docker run -d --name streamingtv -p 4200:80 streamingtv:1.2 `
+`docker run -d --name streamingtv -p 80:80 streamingtv:1.2.1 `
+
+You can pull this image from [Docker Hub](https://hub.docker.com/r/alessiomanai/streamingtv).
 
 ## Running unit tests
 
@@ -39,6 +41,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Licence
+
+	Angular StreamingTV
 
 	Copyright (C) 2021-2022  Alessio Manai
 
